@@ -1,0 +1,78 @@
+---
+import "../styles/global.css";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="navigation-title">Ivan's personal website</a>
+      <input id="menu-toggle" type="checkbox" />
+      <label class="menu-button float-right" for="menu-toggle">|||</label>
+      <ul class="menu">
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/links">Links</a></li>
+        <li><a href="/posts">Posts</a></li>
+      </ul>
+    </nav>
+		<main>
+			<slot />
+		</main>
+		<footer>© 2024 Ivan · Powered by <a href="https://astro.build">Astro</a>.</footer>
+  </body>
+</html>
+<style is:global>
+  nav {
+		height: 36px;
+    margin: 12px 0;
+    padding: 0 16px;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+	nav .navigation-title {
+		font-size: 22px;
+		font-weight: 600;
+	}
+
+	nav input#menu-toggle {
+		display: none;
+	}
+
+  nav ul {
+    position: relative;
+    list-style: none;
+		font-size: 18px;
+    margin-top: 12px;
+    padding: 0;
+		opacity: 0;
+		transition: opacity 0.1s linear;
+		border-top: 1px solid;
+		border-bottom: 1px solid;
+		border-color: var(--border);
+  }
+
+  nav #menu-toggle:checked ~ ul {
+		opacity: 1;
+  }
+
+  nav ul li {
+		margin: 16px 0;
+		display: flex;
+		justify-content: center;
+	}
+</style>
