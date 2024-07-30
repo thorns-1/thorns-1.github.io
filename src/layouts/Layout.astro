@@ -20,19 +20,21 @@ const { title } = Astro.props;
   </head>
   <body>
     <nav>
-      <a href="/" class="navigation-title">Ivan's personal website</a>
-      <input id="menu-toggle" type="checkbox" />
-      <BurgerMenuIcon />
-      <ul class="menu">
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/links">Links</a></li>
-        <li><a href="/posts">Posts</a></li>
-      </ul>
+      <section>
+        <a href="/" class="navigation-title">Ivan's personal website</a>
+        <input id="menu-toggle" type="checkbox" />
+        <BurgerMenuIcon />
+        <ul class="menu">
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/links">Links</a></li>
+          <li><a href="/posts">Posts</a></li>
+        </ul>
+      </section>
     </nav>
     <main>
       <slot />
     </main>
-    <footer>© 2024 Ivan · Powered by <a href="https://astro.build">Astro</a>.</footer>
+    <footer><section>© 2024 Ivan · Powered by <a href="https://astro.build">Astro</a>.</section></footer>
   </body>
 </html>
 <style is:global>
@@ -40,13 +42,20 @@ const { title } = Astro.props;
     height: 36px;
     margin: 12px 0;
     padding: 0 16px;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav section {
     display: block;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
+    max-width: 900px;
   }
 
   nav .navigation-title {
-    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 18px;
     font-weight: 600;
   }
 
@@ -54,7 +63,7 @@ const { title } = Astro.props;
     display: none;
   }
 
-  nav label {
+  nav .menu-button {
     float: right;
   }
 
@@ -85,5 +94,28 @@ const { title } = Astro.props;
     padding: 8px;
     display: flex;
     justify-content: center;
+  }
+
+  @media screen and (min-width: 768px) {
+  nav .navigation-title {
+    font-size: 22px;
+  }
+    nav .menu-button {
+      display: none;
+    }
+    nav ul {
+      float: right;
+      display: flex;
+      column-gap: 16px;
+      justify-content: space-between;
+      opacity: 1;
+      transition: none;
+      margin: 0;
+      border: 0;
+    }
+    nav ul li {
+      font-size: 22px;
+      margin: 0;
+    }
   }
 </style>
