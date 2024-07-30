@@ -3,6 +3,7 @@
   --accent-light: 224, 204, 250;
   --accent-dark: 49, 10, 101;
   --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
+  --main: white;
   --link: #ddbfe4;
   --border: #e5e7eb;
 }
@@ -11,7 +12,7 @@ html {
   font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen-Sans, Ubuntu, Cantarell, helvetica neue,
     Helvetica, sans-serif;
   background: #111827;
-  color: white;
+  color: var(--main);
 }
 
 body {
