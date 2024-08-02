@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const projects = [
+  { name: "project 1", description: "example description" },
+  { name: "project 2", description: "example description" },
+  { name: "project 3", description: "example description" },
+  { name: "project 4", description: "example description" },
+];
+---
+
+<Layout title="My Projects">
+  <div>
+    {
+      projects.map((project) => (
+        <div>
+          <>
+            <h2>{project.name}</h2>
+            <p>{project.description}</p>
+          </>
+        </div>
+      ))
+    }
+  </div>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: var(--main);
+    font-size: 20px;
+    line-height: 1.6;
+  }
+</style>
