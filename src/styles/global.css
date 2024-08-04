@@ -6,12 +6,13 @@
   --main: white;
   --link: #ddbfe4;
   --border: #e5e7eb;
+  --bg: #111827;
 }
 
 html {
   font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen-Sans, Ubuntu, Cantarell, helvetica neue,
     Helvetica, sans-serif;
-  background: #111827;
+  background: var(--bg);
   color: var(--main);
 }
 
