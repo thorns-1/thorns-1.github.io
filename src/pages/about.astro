@@ -1,0 +1,118 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "About me";
+
+const technologies = {
+  languages: {
+    name: "Languages",
+    list: ["JavaScript", "TypeScript"],
+  },
+  shopify: {
+    name: "Shopify",
+    list: ["Themes", "Apps", "Extensions", "Liquid", "API"],
+  },
+  frameworks: {
+    name: "Frameworks",
+    list: ["Astro", "React", "Next.js", "Vite", "Remix", "Nest.js", "Express.js", "React Native", "T3 Stack"],
+  },
+  libraries: {
+    name: "Libraries",
+    list: [
+      "Redux (+RTK)",
+      "React Query",
+      "Puppeteer",
+      "Tailwind",
+      "Ant Design",
+      "Material UI",
+      "Bootstrap",
+      "Validation libraries",
+      "Form libraries",
+      "Chart libraries",
+      "Date libraries",
+    ],
+  },
+  tools: {
+    name: "Tools",
+    list: ["Node.js", "Git", "NPM", "Yarn", "Prettier", "Eslint"],
+  },
+  databases: {
+    name: "Databases and APIs",
+    list: ["MongoDB", "PostgreSQL", "MySQL", "Prisma", "Supabase", "GraphQL", "Google Sheet API"],
+  },
+  cloud: {
+    name: "Cloud",
+    list: ["AWS", "GCP", "GitHub"],
+  },
+  others: {
+    name: "Others",
+    list: [
+      "Linux",
+      "Figma",
+      "UI/UX",
+      "Adobe Photoshop",
+      "Obsidian",
+      "VS Code",
+      "Jira",
+      "Notion",
+      "ClickUp",
+      "Linear",
+      "GitHub",
+      "GitLab",
+      "BitBucket",
+      "Design Patterns",
+    ],
+  },
+};
+---
+
+<Layout title={title}>
+  <div class="content">
+    <h1>{title}</h1>
+    <p>I'm a software engineer with a 3.5+ years of experience.</p>
+    <p>Working on both frontend and backend, using JavaScript (+ TypeScript) and it's ecosystem.</p>
+    <p>Here is the list of technologies and other stuff I've learned/used at least once:</p>
+    <div class="list">
+      {
+        Object.entries(technologies).map(([_, technology]) => (
+          <div>
+            <h3>{technology.name}</h3>
+            <div class="list-container">
+              {technology.list.map((item) => (
+                <div class="list-item">{item}</div>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <p>
+      My other interests are linguistics, music, <sub>sometimes</sub> video games, and a lot of other stuff.
+    </p>
+  </div>
+</Layout>
+
+<style>
+  p {
+    margin: 8px 0;
+  }
+
+  .list {
+    margin-bottom: 16px;
+  }
+
+  .list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .list-item {
+    border: 1px solid #2c2c2d;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: inherit;
+    padding: 4px 8px;
+    line-height: 18px;
+  }
+</style>
