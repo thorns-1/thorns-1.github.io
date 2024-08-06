@@ -10,7 +10,7 @@ const projects = [
 ---
 
 <Layout title="My Projects">
-  <div>
+  <div class="content">
     {
       projects.map((project) => (
         <div>
@@ -23,15 +23,3 @@ const projects = [
     }
   </div>
 </Layout>
-
-<style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: var(--main);
-    font-size: 20px;
-    line-height: 1.6;
-  }
-</style>
