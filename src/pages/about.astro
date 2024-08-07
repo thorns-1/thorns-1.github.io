@@ -1,4 +1,5 @@
 ---
+import Tag from "../components/Tag.astro";
 import Layout from "../layouts/Layout.astro";
 
 const title = "About me";
@@ -80,7 +81,7 @@ const technologies = {
             <h3>{technology.name}</h3>
             <div class="list-container">
               {technology.list.map((item) => (
-                <div class="list-item">{item}</div>
+                <Tag label={item} />
               ))}
             </div>
           </div>
@@ -106,14 +107,5 @@ const technologies = {
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
-  }
-
-  .list-item {
-    border: 1px solid #2c2c2d;
-    border-radius: 8px;
-    box-sizing: border-box;
-    color: inherit;
-    padding: 4px 8px;
-    line-height: 18px;
   }
 </style>
