@@ -1,25 +1,77 @@
 ---
+import Tag from "../components/Tag.astro";
 import Layout from "../layouts/Layout.astro";
 
 const projects = [
-  { name: "project 1", description: "example description" },
-  { name: "project 2", description: "example description" },
-  { name: "project 3", description: "example description" },
-  { name: "project 4", description: "example description" },
+  {
+    name: "Shopify application",
+    description:
+      "Updating, fixing and maintaining public application that handles post-purchases with an ability to edit checkout and post-purchase screens with different blocks and widgets.",
+    tags: ["Shopify", "Polaris", "React", "Express.js"],
+  },
+  {
+    name: "Shopify store widget and application",
+    description:
+      "Working on store that supplies rings and diamonds. My task was to develop a filtering system that will match existing ring options (taken from a large Goggle Sheet doc with over 140'000 variants) to create a new product out of it.",
+    tags: ["Shopify", "Polaris", "React", "Express.js", "Google Sheet API"],
+  },
+  {
+    name: "Store theme",
+    description: "Making a theme for Shopify store that sells different kinds of skin care products.",
+    tags: ["Shopify", "Liquid"],
+  },
+  {
+    name: "Shopify application and widget",
+    description:
+      "Making a widget that takes product order time (pulled from Supabase) and calculates estimated delivery date.",
+    tags: ["Shopify", "Express.js", "Liquid", "Supabase"],
+  },
+  {
+    name: "Shopify application and theme",
+    description:
+      "Making a theme layout, embedded editor and an application that allows users to publish their own pages into the store with the ability to edit it's content.",
+    tags: ["Shopify", "Express.js", "Liquid", "Polaris", "React", "Tailwind", "MongoDB"],
+  },
+  {
+    name: "Shopify application",
+    description:
+      "Making a public application that allows users to perform A/B tests on their products to test different variants of them.",
+    tags: ["Shopify", "Express.js", "Liquid", "Polaris", "React", "MySQL", "Prisma"],
+  },
+  {
+    name: "Full-stack project",
+    description:
+      "Making an application with 3 different parts (worker, UI and API) that fetches data about electricity trades with complex flag management, status processing and other internal processes. Creating a UI from scratch using AntDesign as a reference.",
+    tags: ["UI/UX", "Figma", "AntDesign", "React", "PostrgeSQL", "Nest.js", "AWS"],
+  },
 ];
 ---
 
 <Layout title="My Projects">
   <div class="content">
+    <h1>My Commercial Projects</h1>
     {
       projects.map((project) => (
         <div>
-          <>
-            <h2>{project.name}</h2>
-            <p>{project.description}</p>
-          </>
+          <h3>{project.name}</h3>
+          <p>{project.description}</p>
+          <div class="list-container">
+            {project.tags.map((tag) => (
+              <Tag label={tag} />
+            ))}
+          </div>
         </div>
       ))
     }
+    <h1>My Pet Projects</h1>
+    <div>🚧🛠️🔨UNDER CONSTRUCTION🔨🛠️🚧</div>
   </div>
 </Layout>
+
+<style>
+  .list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+</style>
