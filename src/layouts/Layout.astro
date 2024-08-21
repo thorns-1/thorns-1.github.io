@@ -88,6 +88,13 @@ const { title } = Astro.props;
     opacity: 1;
   }
 
+  .content {
+    max-width: var(--content-width);
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
   nav ul li {
     margin: 16px 0;
     display: flex;

@@ -32,13 +32,6 @@ main {
   padding: 0 16px;
 }
 
-.content {
-  max-width: var(--content-width);
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-}
-
 * {
   box-sizing: border-box;
 }
