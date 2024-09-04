@@ -48,7 +48,7 @@ import Layout from "../layouts/Layout.astro";
   </div>
 </Layout>
 
-<style>
+<style is:global>
   main {
     margin: auto;
     padding: 1rem;
@@ -57,6 +57,10 @@ import Layout from "../layouts/Layout.astro";
     color: var(--main);
     font-size: 20px;
     line-height: 1.6;
+  }
+
+  .content {
+    justify-content: center;
   }
 
   .wrapper {
