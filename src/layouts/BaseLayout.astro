@@ -2,10 +2,10 @@
 import BurgerMenuIcon from "../components/BurgerMenuIcon.astro";
 import "../styles/global.css";
 interface Props {
-  title: string;
+  pageTitle: string;
 }
 
-const { title } = Astro.props;
+const { pageTitle } = Astro.props;
 ---
 
 <!doctype html>
@@ -16,7 +16,7 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <nav>
