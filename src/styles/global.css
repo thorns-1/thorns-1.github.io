@@ -5,6 +5,7 @@
   --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
   --main: white;
   --link: #ddbfe4;
+  --tag: #ddbfe4;
   --border: #e5e7eb;
   --bg: #111827;
   --content-width: 900px;
@@ -27,7 +28,6 @@ body {
 }
 
 main {
-  display: flex;
   flex: 1;
   margin: 0;
   padding: 0 16px;
