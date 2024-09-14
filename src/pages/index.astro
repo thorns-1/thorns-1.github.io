@@ -1,23 +1,20 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<Layout title="Welcome">
+<BaseLayout pageTitle="Welcome">
   <div class="wrapper">
     <svg
       version="1.1"
-      id="Capa_1"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
-      width="300"
-      height="300"
-      viewBox="0 0 57 57"
+      width="200"
+      height="200"
+      viewBox="5 5 47 47"
       xml:space="preserve"
-      fill="#000000"
-      ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
-        id="SVGRepo_tracerCarrier"
-        stroke-linecap="round"
-        stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+      fill="var(--main)"
+    >
+      <g id="SVGRepo_iconCarrier">
         <path
           style="fill:#BDC3C7;"
           d="M20,44c-0.256,0-0.512-0.098-0.707-0.293L4.586,29l14.707-14.707c0.391-0.391,1.023-0.391,1.414,0 s0.391,1.023,0,1.414L7.414,29l13.293,13.293c0.391,0.391,0.391,1.023,0,1.414C20.512,43.902,20.256,44,20,44z"
@@ -46,10 +43,11 @@ import Layout from "../layouts/Layout.astro";
       </a>
     </div>
   </div>
-</Layout>
+</BaseLayout>
 
 <style is:global>
   main {
+    display: flex;
     margin: auto;
     padding: 1rem;
     width: 800px;
@@ -70,10 +68,17 @@ import Layout from "../layouts/Layout.astro";
     align-items: center;
   }
 
+  svg {
+    margin-bottom: 16px;
+  }
+
   h2,
-  h3,
+  h3 {
+    margin: 0;
+  }
+
   .links {
-    margin: 8px 0;
+    margin-top: 32px;
   }
 
   .links a:hover svg path {
