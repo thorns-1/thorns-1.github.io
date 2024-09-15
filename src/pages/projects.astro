@@ -1,6 +1,6 @@
 ---
 import Tag from "../components/Tag.astro";
-import Layout from "../layouts/Layout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const projects = [
   {
@@ -47,7 +47,7 @@ const projects = [
 ];
 ---
 
-<Layout title="My Projects">
+<BaseLayout pageTitle="My Projects">
   <h1>My Commercial Projects</h1>
   {
     projects.map((project) => (
@@ -59,12 +59,13 @@ const projects = [
             <Tag label={tag} />
           ))}
         </div>
+        <hr />
       </div>
     ))
   }
   <h1>My Pet Projects</h1>
   <div>🚧🛠️🔨UNDER CONSTRUCTION🔨🛠️🚧</div>
-</Layout>
+</BaseLayout>
 
 <style>
   .list-container {
