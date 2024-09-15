@@ -1,6 +1,6 @@
 ---
 import Tag from "../components/Tag.astro";
-import Layout from "../layouts/Layout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const title = "About me";
 
@@ -68,7 +68,7 @@ const technologies = {
 };
 ---
 
-<Layout title={title}>
+<BaseLayout pageTitle={title}>
   <h1>{title}</h1>
   <p>I'm a software engineer with a 3.5+ years of experience.</p>
   <p>Working on both frontend and backend, using JavaScript (+ TypeScript) and it's ecosystem.</p>
@@ -90,7 +90,7 @@ const technologies = {
   <p>
     My other interests are linguistics, music, <sub>sometimes</sub> video games, and a lot of other stuff.
   </p>
-</Layout>
+</BaseLayout>
 
 <style>
   p {
