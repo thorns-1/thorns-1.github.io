@@ -2,5 +2,5 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://thorns-1.github.io/personal-website/',
+  site: 'https://thorns-1.github.io',
 });
