@@ -48,10 +48,6 @@ a {
 }
 
 @media screen and (min-width: 768px) {
-  main {
-    margin: 12px 0;
-  }
-
   h1 {
     margin: 12px 0;
     font-size: 36px;
