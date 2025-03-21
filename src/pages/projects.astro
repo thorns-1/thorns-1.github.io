@@ -53,7 +53,7 @@ const projects = [
     projects.map((project) => (
       <div>
         <h3>{project.name}</h3>
-        <p>{project.description}</p>
+        <p class="description">{project.description}</p>
         <div class="list-container">
           {project.tags.map((tag) => (
             <Tag label={tag} />
@@ -72,6 +72,9 @@ const projects = [
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
+  }
+  .description {
+    text-wrap: balance;
   }
   hr {
     opacity: .5;
